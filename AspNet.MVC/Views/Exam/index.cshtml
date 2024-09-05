@@ -1,0 +1,35 @@
+﻿@model List<Book>
+@{
+    ViewData["Title"] = "Books";
+}
+<hr />
+
+<table class="table">
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Author
+        </th>
+        <th>
+            Number of pages
+        </th>
+    </tr>
+    @foreach (var book in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(x => book.Title)
+            </td>
+
+            <td>
+                @Html.DisplayFor(x => book.Author.FullName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(x => book.NumberOfPages)
+            </td>          
+        </tr>
+    }
+</table>
